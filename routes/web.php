@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/categorias', [CategoriasController::class,'index'])->name('categorias.index');
-Route::get('/categorias/criar', [CategoriasController::class,'create'])->name('categorias.create');
-Route::post('/categorias/salvar', [CategoriasController::class,'store'])->name('categorias.store');
+// Route::get('/categorias', [CategoriasController::class,'index'])->name('categorias.index');
+// Route::get('/categorias/criar', [CategoriasController::class,'create'])->name('categorias.create');
+// Route::post('/categorias/salvar', [CategoriasController::class,'store'])->name('categorias.store');
+
+Route::resource('Categorias',CategoriasController::Class)->only[('index','create','store')];

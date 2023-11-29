@@ -47,6 +47,6 @@ class CategoriasController extends Controller
             'nome' => $request->nome
         ]);
 
-        return redirect(route('categorias.index'));
+        return redirect()->route('categorias.index')-with(['mensagemSucesso','Categoria cadastrada com sucesso!']);
     }
 }
