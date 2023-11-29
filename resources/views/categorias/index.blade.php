@@ -1,9 +1,12 @@
 <x-layout titulo="Categorias">
+    <nav>
+        <a href="{{route('categorias.create')}}">Criar Categoria</a>
+    </nav>
     <ul>
         @foreach ($categorias as $categoria)
         <li>
-            {{$categoria}}
+            {{$categoria->nome}}
         </li>
         @endforeach
-    </ul>
+    </ul>    
 </x-layout>
