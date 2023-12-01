@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoriaStoreRequest;
 
 class CategoriasController extends Controller
 {
@@ -31,7 +32,7 @@ class CategoriasController extends Controller
         return view('categorias.criar');
     }
 
-    public function store(Request $request)
+    public function store(CategoriaStoreRequest $request)
     {
 
 
@@ -43,10 +44,15 @@ class CategoriasController extends Controller
         //      'nome'=>$request->input('nome')   // ou $request->nome
         // ]);
 
+
         Categoria::create([
             'nome' => $request->nome
         ]);
 
-        return redirect(route('categorias.index'));
+        
+
+        return redirect(route('categorias.index'))->with(['mensagemSucesso'=>'Categoria criada com sucesso!']);
     }
 }
+
+
